@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic.base import TemplateView
 
 from main.feeds import LatestEntriesFeed, UnapprovedEntriesFeed
@@ -21,12 +21,12 @@ urlpatterns = [
         job_detail,
         name="view_job"
     ),
-    path(
+    re_path(
         '<int:object_id>/approve$',
         approve,
         name="approve_job"
     ),
-    path(
+    re_path(
         '<int:object_id>/disapprove$',
         disapprove,
         name="disapprove_job"

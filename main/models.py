@@ -18,7 +18,7 @@ class Job(models.Model):
 
     posted_by_user_agent = models.CharField(max_length=1024, default="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22")
 
-    posted_from_ip = models.IPAddressField(blank=True, null=True)
+    posted_from_ip = models.GenericIPAddressField(blank=True, null=True)
 
     title = models.CharField(max_length=1024)
 
